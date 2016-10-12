@@ -6,9 +6,10 @@ var app = express();
 app.use(bodyParser.json());
 
 app.get('/api/movies', movieCtrl.get);
-app.put('/api/movies', movieCtrl.modify);
+app.get('/api/movies/:movieId', movieCtrl.getById)
+app.put('/api/movies/:movieId', movieCtrl.modify)
 app.post('/api/movies', movieCtrl.add);
-app.delete('/api/movies', movieCtrl.delete);
+app.delete('/api/movies/:movieId', movieCtrl.delete);
 
 
 var port = 3000;
